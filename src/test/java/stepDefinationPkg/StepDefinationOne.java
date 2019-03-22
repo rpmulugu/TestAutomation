@@ -28,7 +28,7 @@ public class StepDefinationOne {
 		System.setProperty("webdriver.chrome.driver", "D:\\Automation_workspace\\chromedriver_win32\\chromedriver.exe");
 		driver.manage().window().maximize();
 		driver.get("https://swiftmtransferapp-dev.azurewebsites.net/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		System.out.println("Visited Home page:"+driver.getCurrentUrl());
 	}
 
@@ -104,7 +104,7 @@ public void beforeFirst(){
 	public void click_on_Submit() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		System.out.println("Test-Register button");
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 		WebElement submitEle= driver.findElement(By.cssSelector("button[class='btn btn-primary']"));
 
 		//WebElement submitEle=driver.findElement(By.cssSelector("body > app-root > div > div > div.col-sm-9.body-content > app-register > form > div:nth-child(6) > button"));
@@ -121,7 +121,7 @@ public void beforeFirst(){
 	public void Check_the_response_message() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		System.out.println("Test-response validate");
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 	//	WebElement msg=driver.findElement(By.id("Message"));
 		//WebElement msg= driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/app-register/form/div[1]/div/p"));
 
@@ -166,7 +166,7 @@ public void beforeFirst(){
 
 		WebElement fromdropdownEle=	driver.findElement(By.cssSelector("input[formcontrolname='fromAccNumber']"));
 		System.out.println("From Account is Auto-Selected :"+fromdropdownEle.getText());
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 	}
 
 	@When("^To Account Number$")
@@ -191,6 +191,7 @@ public void beforeFirst(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='toAccNumber']")));*/
 
     	oSelect.selectByValue("30"); //Update value as per need
+    	Thread.sleep(1000);
 	}
 
 	@When("^Add Amount details$")
@@ -198,7 +199,7 @@ public void beforeFirst(){
 		WebElement amountEle=driver.findElement(By.cssSelector("input[formcontrolname='transAmount']"));
 		amountEle.sendKeys("100");;
 		System.out.println("Transfer amount entered is : " +amountEle.getAttribute("value"));	
-		//Thread.sleep(100);
+		Thread.sleep(100);
 
 	}
 
@@ -207,16 +208,17 @@ public void beforeFirst(){
 		WebElement disNote=driver.findElement(By.cssSelector("input[formcontrolname='description']"));
 		disNote.sendKeys("Loan amount");;
 		System.out.println("Transfer amount entered is : " +disNote.getAttribute("value"));	
-		//Thread.sleep(100);
+		Thread.sleep(100);
 
 	}
 
 	@When("^Click on Transfer button$")
 	public void click_on_Transfer_button() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
+		Thread.sleep(100);
 		driver.findElement(By.cssSelector("button[class='btn btn-primary']")).click();
 		System.out.println("Money is transferred !!");
-
+		
 	}
 
 	@Then("^Validate the message$")
@@ -250,7 +252,7 @@ public void beforeFirst(){
 		WebElement linkTH=driver.findElement(By.linkText( "Transact History"));
 		System.out.println("Link name is : " +linkTH.getAttribute("value"));	
 		linkTH.click();
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 
 	}
 
