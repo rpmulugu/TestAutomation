@@ -25,7 +25,7 @@ public class StepDefinationOne {
 	@Before
 	public void setUP(){
 		driver=new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver", "D:\\Automation_workspace\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver.manage().window().maximize();
 		driver.get("https://swiftmtransferapp-dev.azurewebsites.net/");
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);

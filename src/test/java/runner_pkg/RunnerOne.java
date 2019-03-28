@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="D:\\Automation_workspace\\cucumber_maven_selenium\\src\\test\\java\\featurePkg\\featureOne.feature",
+@CucumberOptions(features="classpath:featureOne.feature",
 glue={"stepDefinationPkg"},
 
 plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
