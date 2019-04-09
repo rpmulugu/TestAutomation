@@ -249,7 +249,7 @@ public void beforeFirst(){
 
 	@When("^Click on TransferHistory$")
 	public void click_on_TransferHistory() throws Throwable {
-		WebElement linkTH=driver.findElement(By.linkText( "Transact History"));
+		WebElement linkTH=driver.findElement(By.linkText( "WrongTransact History"));
 		System.out.println("Link name is : " +linkTH.getAttribute("value"));	
 		linkTH.click();
 		Thread.sleep(1000);
